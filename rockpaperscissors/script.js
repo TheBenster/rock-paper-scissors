@@ -10,15 +10,16 @@ function computerChoice(){
     };
     return randomChoice
 }
-
+playerScore = 0;
+    comScore = 0;
 function playRound(){
     comChoice = computerChoice()
     playerChoice = prompt('rock, paper or scissors?: ')
-    playerScore = 0;
-    comScore = 0;
+    
     
         if(playerChoice == comChoice){
             alert(`It's a tie! you both picked ${comChoice}`)
+            let tie = true;
             alert(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
         // Player picks ROCK
         } else if(playerChoice == 'rock'){
@@ -59,9 +60,12 @@ function playRound(){
             
         }
     }
-    function playGame(comScore, playerScore){
+    function playGame(){
         for(let i =0; i<5; i++){
             playRound()
+            if(tie= true){
+                i--;
+            }
             if(comScore == 5){
                 alert("The computer wins! better luck next time")
                 break
