@@ -35,25 +35,23 @@ function playRound(args){
         // Player picks PAPER
         } else if(playerChoice == paper.textContent){
             if(comChoice == 'scissors'){
-                console.log('You lost, scissors beats paper')
                 comScore += 1;
-                console.log(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                message.textContent = `You lost, scissors beats paper. Player score is: ${playerScore}. Computer Score is: ${comScore}`
             } else if (comChoice == 'rock'){
-                console.log('You win! Paper beats rock')
                 playerScore += 1;
-                console.log(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                message.textContent = `You win! Paper beats rock. Player score is: ${playerScore}. Computer Score is: ${comScore}`
             } 
             
         //Player picks SCISSORS
         } else if(playerChoice == scissors.textContent){
             if(comChoice == 'rock'){
-                console.log('You lost, rock beats scissors')
+                console.log('')
                 comScore += 1;
-                console.log(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                message.textContent = `You lost, rock beats scissors. Player score is: ${playerScore}. Computer Score is: ${comScore}`
             } else if (comChoice == 'paper'){
-                console.log('You win! Scissors beats paper')
+                console.log('')
                 playerScore += 1;
-                console.log(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                message.textContent = `You win! Scissors beats paper. Player score is: ${playerScore}. Computer Score is: ${comScore}`
             }
             
         }
@@ -62,7 +60,7 @@ function playRound(args){
 
     function playGame(comScore, playerScore){
         for(let i =0; i<5; i++){
-            playRound(rock)
+            playRound()
             if(tie= true){
                 i--;
             }
@@ -84,6 +82,7 @@ paper.textContent = 'paper'
 let scissors = document.querySelector('#scissors')
 scissors.textContent = 'scissors'
 let message = document.querySelector('#message')
+message.setAttribute('style', 'font-size:20px;')
 
 const player = [rock, paper, scissors];
 
