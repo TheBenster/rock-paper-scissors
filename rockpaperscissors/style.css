@@ -1,0 +1,54 @@
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #212121;
+    color: white;
+}
+
+.menu{
+    padding-left: 15%;
+    padding-right: 15%;
+    display:flex;
+    flex-direction: column;
+    margin-top: 10%;
+    justify-content: center;
+    gap: 20px;
+}
+
+.selection{
+    display:flex;
+    gap:100px;
+    height:50%;
+    justify-content: center;
+    
+    
+}
+button{
+    background-color: #404040;
+    border-style: none;
+    border-radius: 10px;
+    height:200px;
+    width: 200px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+#message{
+    text-align: center;
+    margin-top:100px;
+}
+
+button:hover{
+    width:230px;
+    height:230px;
+    transition:0.4s;
+    transform: 2s, ease-out .2s;
+    cursor:pointer;
+    
+}
+
+button:not(:hover){
+    transition: 0.4s;
+}

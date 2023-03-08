@@ -11,69 +11,91 @@ function computerChoice(){
     return randomChoice
 }
 playerScore = 0;
-    comScore = 0;
-function playRound(){
+comScore = 0;
+function playRound(args){
     comChoice = computerChoice()
-    playerChoice = prompt('rock, paper or scissors?: ')
-    
+    let playerChoice = args
     
         if(playerChoice == comChoice){
-            alert(`It's a tie! you both picked ${comChoice}`)
+            console.log()
             let tie = true;
-            alert(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+            message.textContent = `It's a tie! you both picked ${comChoice}. Player score: ${playerScore}. Computer Score: ${comScore}`
         // Player picks ROCK
-        } else if(playerChoice == 'rock'){
+        } else if(playerChoice == rock.textContent){
             if(comChoice == 'scissors'){
-                alert('You win! Rock beats scissors')
+                message.textContent = ''
                 playerScore += 1;
-                alert(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                message.textContent = `You win! Rock beats scissors. Player score: ${playerScore}. Computer Score: ${comScore}`
             }else if(comChoice == 'paper'){
-                alert('You lost, paper beats rock')
+                message.textContent = ''
                 comScore += 1;
-                alert(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                message.textContent = `You lost, paper beats rock. Player score: ${playerScore}. Computer Score: ${comScore}`
             }
             
         // Player picks PAPER
-        } else if(playerChoice == 'paper'){
+        } else if(playerChoice == paper.textContent){
             if(comChoice == 'scissors'){
-                alert('You lost, scissors beats paper')
+                console.log('You lost, scissors beats paper')
                 comScore += 1;
-                alert(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                console.log(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
             } else if (comChoice == 'rock'){
-                alert('You win! Paper beats rock')
+                console.log('You win! Paper beats rock')
                 playerScore += 1;
-                alert(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                console.log(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
             } 
             
-            
         //Player picks SCISSORS
-        } else if(playerChoice == 'scissors'){
+        } else if(playerChoice == scissors.textContent){
             if(comChoice == 'rock'){
-                alert('You lost, rock beats scissors')
+                console.log('You lost, rock beats scissors')
                 comScore += 1;
-                alert(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                console.log(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
             } else if (comChoice == 'paper'){
-                alert('You win! Scissors beats paper')
+                console.log('You win! Scissors beats paper')
                 playerScore += 1;
-                alert(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
+                console.log(`Player score is: ${playerScore}. Computer Score is: ${comScore}`)
             }
             
         }
     }
-    function playGame(){
+
+
+    function playGame(comScore, playerScore){
         for(let i =0; i<5; i++){
-            playRound()
+            playRound(rock)
             if(tie= true){
                 i--;
             }
             if(comScore == 5){
-                alert("The computer wins! better luck next time")
+                console.log("The computer wins! better luck next time")
                 break
             } else if (playerScore == 5){
-                alert('You win! You beat the computer')
+                console.log('You win! You beat the computer')
                 break
             }
 
         }
     }
-playGame();
+
+let rock = document.querySelector('#rock')
+rock.textContent = 'rock'
+let paper = document.querySelector('#paper')
+paper.textContent = 'paper'
+let scissors = document.querySelector('#scissors')
+scissors.textContent = 'scissors'
+let message = document.querySelector('#message')
+
+const player = [rock, paper, scissors];
+
+rock.addEventListener('click', function(){
+    play = player[0].textContent;
+    playRound(play);
+});
+paper.addEventListener('click', function(){
+    play = player[1].textContent;
+    playRound(play);
+});
+scissors.addEventListener('click', function(){
+    play = player[2].textContent;
+    playRound(play);
+});
