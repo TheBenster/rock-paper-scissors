@@ -55,10 +55,6 @@ function playRound(args){
             }
             
         }
-    }
-
-
-    function playGame(comScore, playerScore){
         for(let i =0; i<5; i++){
             playRound()
             if(tie= true){
@@ -75,6 +71,24 @@ function playRound(args){
         }
     }
 
+
+    function playGame(comScore, playerScore){
+        // for(let i =0; i<5; i++){
+        //     playRound()
+        //     if(tie= true){
+        //         i--;
+        //     }
+        //     if(comScore == 5){
+        //         console.log("The computer wins! better luck next time")
+        //         break
+        //     } else if (playerScore == 5){
+        //         console.log('You win! You beat the computer')
+        //         break
+        //     }
+
+        // }
+    }
+
 let rock = document.querySelector('#rock')
 rock.textContent = 'rock'
 let paper = document.querySelector('#paper')
@@ -84,6 +98,7 @@ scissors.textContent = 'scissors'
 let message = document.querySelector('#message')
 message.setAttribute('style', 'font-size:20px;')
 
+// buttons.addEventListener('click', playGame())
 const player = [rock, paper, scissors];
 
 rock.addEventListener('click', function(){
