@@ -52,3 +52,45 @@ button:hover{
 button:not(:hover){
     transition: 0.4s;
 }
+
+#replay{
+    display:flex;
+    align-items: center;
+    justify-content: center;;
+}
+
+#tryAgain{
+    background-color: #99ccff;
+    height: 40px;
+    width: 120px;
+    color: white;
+    visibility:hidden;
+    justify-content: center;
+
+}
+#tryAgain:hover{
+    width: 160px;
+}
+img {
+    height:120px;
+    width: 120px;
+    background-color: transparent;
+}
+img:hover{
+    height:150px;
+    width:150px;
+    transition: .1s
+}
+.contact{
+    display:flex;
+    justify-content: center;
+    align-items: start;
+}
+img#git{
+    height:70px;
+    width:70px;
+}
+img#git:hover{
+    height:100px;
+    width:100px;
+}
