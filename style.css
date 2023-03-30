@@ -23,6 +23,7 @@ body {
     gap:100px;
     height:50%;
     justify-content: center;
+    flex-wrap: wrap;
     
     
 }
